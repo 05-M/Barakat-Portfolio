@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Barakat - Android Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- هنا بنربط ملف الـ CSS بتاعنا -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- 1. Hero Section -->
+    <section id="hero">
+        <!-- هنحط المحتوى جوه div عشان نتحكم فيه كوحدة واحدة -->
+        <div class="hero-content">
+            <h1>Muhammad Barakat</h1>
+            <p class="tagline">
+                Android Developer passionate about building clean and practical mobile applications with modern Android
+                tools.
+            </p>
+            <!-- ده الزرار اللي هيودينا على قسم المشاريع لما ندوس عليه -->
+            <a href="#projects" class="cta-button">View My Projects</a>
+        </div>
+    </section>
+
+    <!-- 2. About Me Section -->
+    <section id="about">
+        <div class="container">
+            <!-- هنقسم المحتوى لجزئين -->
+            <div class="about-image">
+                <img src="barakotta.png" alt="Muhammad Barakat">
+            </div>
+            <div class="about-text">
+                <h2>About Me</h2>
+                <p>
+                    I am an Android developer with a strong focus on learning the fundamentals of modern Android
+                    development. I work with Kotlin and Jetpack Compose, and I care deeply about writing clean code,
+                    understanding state management, and applying proper architecture patterns like MVVM.
+                </p>
+                <p>
+                    I enjoy turning ideas into real applications and continuously improving my skills by building
+                    projects, exploring best practices, and learning from real-world problems.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2>My Skills</h2>
+            <!-- هنعمل حاوية لكل تصنيف -->
+            <div class="skills-grid">
+
+                <!-- التصنيف الأول: Languages -->
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <div class="chips-container">
+                        <span class="chip">Kotlin</span>
+                        <span class="chip">Python</span>
+                        <span class="chip">SQL</span>
+                    </div>
+                </div>
+
+                <!-- التصنيف التاني: Android & Frameworks -->
+                <div class="skill-category">
+                    <h3>Android & Frameworks</h3>
+                    <div class="chips-container">
+                        <span class="chip">Android SDK</span>
+                        <span class="chip">Jetpack Compose</span>
+                    </div>
+                </div>
+
+                <!-- التصنيف التالت: Architecture & Concepts -->
+                <div class="skill-category">
+                    <h3>Architecture & Concepts</h3>
+                    <div class="chips-container">
+                        <span class="chip">MVVM</span>
+                        <span class="chip">Clean Architecture</span>
+                        <span class="chip">State Management</span>
+                    </div>
+                </div>
+
+                <!-- التصنيف الرابع: Data & Networking -->
+                <div class="skill-category">
+                    <h3>Data & Networking</h3>
+                    <div class="chips-container">
+                        <span class="chip">Room Database</span>
+                        <span class="chip">Retrofit</span>
+                        <span class="chip">JSON/REST APIs</span>
+                    </div>
+                </div>
+
+                <!-- التصنيف الخامس: Tools -->
+                <div class="skill-category">
+                    <h3>Tools</h3>
+                    <div class="chips-container">
+                        <span class="chip">Git</span>
+                        <span class="chip">GitHub</span>
+                        <span class="chip">Android Studio</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2>My Projects</h2>
+            <div class="projects-grid">
+
+                <!-- المشروع الأول: Student Task Manager -->
+                <div class="project-card">
+                    <h3>Student Task Manager App</h3>
+                    <p>
+                        A simple task management application designed to help students organize their daily tasks.
+                        Built with MVVM architecture and Room Database for local persistence.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Kotlin</span>
+                        <span class="tech-tag">Compose</span>
+                        <span class="tech-tag">Room</span>
+                    </div>
+                    <a href="https://github.com/05-M/Student-Task-Manager" target="_blank" class="project-link">View on
+                        GitHub</a>
+                </div>
+
+                <!-- المشروع التاني: University Companion -->
+                <div class="project-card">
+                    <h3>University Companion App</h3>
+                    <p>
+                        An Android app that simulates a university student's companion,
+                        focusing on clean architecture and fetching data from Retrofit (simulated with local JSON).
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">MVVM</span>
+                        <span class="tech-tag">Retrofit</span>
+                        <span class="tech-tag">Navigation</span>
+                    </div>
+                    <a href="https://github.com/05-M/UniversityCompanionApp" target="_blank" class="project-link">View
+                        on GitHub</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p class="contact-subtext">Feel free to reach out to me through the following platforms:</p>
+
+            <div class="social-links">
+                <!-- Email -->
+                <a href="mailto:hjajbrkat@gmail.com" title="Email Me">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <!-- GitHub -->
+                <a href="https://github.com/05-M" target="_blank" title="GitHub Profile">
+                    <i class="fab fa-github"></i>
+                </a>
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/muhammad-barakat-b1b1ab2bb/" target="_blank"
+                    title="LinkedIn Profile">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- الـ Footer (تذييل الصفحة) -->
+    <footer>
+        <p>&copy; 2026 Muhammad Barakat. Built with ❤️ and Kotlin Spirit.</p>
+    </footer>
+
+</body>
+
+</html>

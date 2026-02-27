@@ -1,0 +1,341 @@
+/* ----- 1. تجهيزات أساسية للموقع كله ----- */
+
+/* استيراد خط جميل من Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* بنظف أي مسافات أو هوامش افتراضية عشان نتحكم في كل حاجة بنفسنا */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* بنخلي الـ scroll ناعم لما ندوس على اللينكات الداخلية */
+html {
+    scroll-behavior: smooth;
+}
+
+/* بنحدد الخط الأساسي والألوان الأساسية للموقع كله */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #FFF8F1;
+    /* لون الخلفية البيج الفاتح */
+    color: #1F1B13;
+    /* لون الخط الأساسي الغامق */
+    line-height: 1.6;
+    /* ارتفاع السطر عشان الكلام يبقى مريح للعين */
+}
+
+
+/* ----- 2. تصميم الـ Hero Section ----- */
+
+#hero {
+    /* بنخلي القسم ده ياخد طول الشاشة كلها */
+    height: 100vh;
+
+    /* السحر كله هنا: بنستخدم Flexbox عشان نحط كل حاجة في النص بالظبط */
+    display: flex;
+    justify-content: center;
+    /* توسيط رأسي */
+    align-items: center;
+    /* توسيط أفقي */
+    text-align: center;
+    /* بنخلي كل النصوص في النص */
+
+    padding: 0 20px;
+    /* مسافة من الجوانب عشان الكلام ميلزقش في أطراف الشاشة الصغيرة */
+}
+
+/* تصميم العنوان الرئيسي (اسمك) */
+#hero h1 {
+    font-size: 4rem;
+    /* حجم خط كبير جدًا */
+    font-weight: 700;
+    /* خط سميك */
+    margin-bottom: 1rem;
+    /* مسافة تحت العنوان */
+}
+
+/* تصميم الـ tagline (النبذة) */
+#hero .tagline {
+    font-size: 1.2rem;
+    color: #4E4639;
+    /* لون أهدى شوية من لون الخط الأساسي */
+    max-width: 600px;
+    /* بنحدد أقصى عرض عشان ميفرشحش على الشاشات الكبيرة */
+    margin-bottom: 2rem;
+    /* مسافة تحت النبذة */
+}
+
+/* تصميم الزرار (Call to Action) */
+#hero .cta-button {
+    display: inline-block;
+    text-decoration: none;
+    /* بنشيل الخط اللي تحت اللينك */
+    color: #FFFFFF;
+    /* لون الخط أبيض */
+    background-color: #7D5700;
+    /* لون الخلفية الأساسي بتاعنا */
+    padding: 12px 24px;
+    /* مسافات داخلية عشان يبان كزرار */
+    border-radius: 8px;
+    /* حواف مدورة */
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    /* أنيميشن بسيط لما الماوس يجي عليه */
+}
+
+/* لما الماوس يجي فوق الزرار، لونه يغمق شوية */
+#hero .cta-button:hover {
+    background-color: #5F4100;
+}
+
+/* ----- 3. تصميم الـ About Me Section ----- */
+
+#about {
+    padding: 100px 20px;
+    /* مسافات كبيرة فوق وتحت عشان يبقى قسم منفصل */
+    background-color: #FFFFFF;
+    /* ممكن ندي خلفية بيضاء عشان نكسر اللون */
+}
+
+/* هنعمل حاوية عشان المحتوى ميملاش الشاشة كلها ويبقى شكله حلو */
+.container {
+    max-width: 1100px;
+    /* أقصى عرض للحاوية */
+    margin: 0 auto;
+    /* بتخلي الحاوية في نص الشاشة */
+
+    /* السحر كله هنا تاني: بنستخدم Flexbox عشان نحط الصورتين جنب بعض */
+    display: flex;
+    align-items: center;
+    /* بنخليهم على نفس الخط */
+    gap: 50px;
+    /* مسافة بين الصورة والكلام */
+}
+
+/* تصميم الجزء بتاع الصورة */
+.about-image {
+    flex: 1;
+    /* بتاخد جزء من المساحة */
+}
+
+.about-image img {
+    max-width: 100%;
+    /* عشان الصورة متطلعش بره الحاوية بتاعتها */
+    border-radius: 16px;
+    /* حواف مدورة شيك */
+}
+
+/* تصميم الجزء بتاع الكلام */
+.about-text {
+    flex: 1.5;
+    /* بتاخد جزء ونص من المساحة (أكبر من الصورة) */
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    /* مسافة بين الفقرات */
+}
+
+/* ----- 4. تصميم الـ Skills Section ----- */
+
+#skills {
+    padding: 100px 20px;
+    background-color: #FFF8F1;
+    /* هنرجع للون البيج عشان نغير الجو */
+}
+
+/* بنخلي العنوان الرئيسي في النص */
+#skills h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+/* السحر كله هنا: بنستخدم Grid عشان نقسم التصنيفات لعمودين أو تلاتة */
+.skills-grid {
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+    /* خلينا نبدأ بعمود واحد عشان يبقى بسيط، وبعدين نخليه أعمدة */
+    grid-template-columns: 1fr;
+    gap: 40px;
+    /* مسافة بين كل تصنيف والتاني */
+}
+
+.skill-category h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #7D5700;
+    /* خط بسيط تحت العنوان */
+    padding-bottom: 8px;
+}
+
+/* هنا بنستخدم Flexbox عشان نرص الـ Chips جنب بعض */
+.chips-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* لو مفيش مساحة، الـ Chip ينزل على السطر اللي بعده */
+    gap: 10px;
+    /* مسافة بين كل Chip والتاني */
+}
+
+/* تصميم الـ Chip نفسه */
+.chip {
+    background-color: #F0E0C8;
+    /* نفس لون الـ surfaceVariant بتاع التطبيق */
+    color: #4E4639;
+    padding: 8px 16px;
+    border-radius: 20px;
+    /* حواف مدورة جدًا */
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* ----- 5. تصميم الـ Projects Section ----- */
+
+#projects {
+    padding: 100px 20px;
+    background-color: #FFFFFF;
+    /* خلفية بيضاء عشان تبرز الكروت البيج */
+}
+
+#projects h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+/* بنستخدم Grid عشان الكروت تترتب جنب بعض بشكل احترافي */
+.projects-grid {
+    display: grid;
+    /* ده بيخلي الكروت تترص جنب بعض ولو الشاشة صغرت ينزلوا تحت بعض تلقائيًا */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+/* تصميم الكارد الواحد */
+.project-card {
+    background-color: #F0E0C8;
+    /* اللون البيج الرايق */
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* حتة أنيميشن بسيطة لما المستخدم يقف بالماوس على الكارد */
+.project-card:hover {
+    transform: translateY(-10px);
+    /* يترفع لفوق شوية */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    /* ظل خفيف */
+}
+
+.project-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: #1F1B13;
+}
+
+.project-card p {
+    font-size: 1rem;
+    color: #4E4639;
+    margin-bottom: 1.5rem;
+}
+
+/* الـ Tags بتاعة التكنولوجيا جوه الكارد */
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.tech-tag {
+    background-color: #FFFFFF;
+    /* تباين مع الكارد */
+    font-size: 0.8rem;
+    padding: 5px 12px;
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+/* زرار جيت هاب جوه الكارد */
+.project-link {
+    text-decoration: none;
+    color: #7D5700;
+    font-weight: 700;
+    border: 2px solid #7D5700;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.project-link:hover {
+    background-color: #7D5700;
+    color: #FFFFFF;
+}
+
+/* ----- 6. تصميم الـ Contact Section ----- */
+
+#contact {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: #FFF8F1;
+    /* لون بيج هادي */
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.contact-subtext {
+    color: #4E4639;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+/* تنسيق صف الأيقونات */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    /* مسافة بين الأيقونات */
+}
+
+.social-links a {
+    font-size: 3rem;
+    /* حجم الأيقونة */
+    color: #7D5700;
+    transition: all 0.3s ease;
+}
+
+/* حركة صياعة لما الماوس يجي على الأيقونة */
+.social-links a:hover {
+    color: #5F4100;
+    transform: scale(1.2) rotate(5deg);
+    /* تكبر وتلف سنة بسيطة */
+}
+
+/* ----- 7. تصميم الـ Footer ----- */
+
+footer {
+    padding: 40px 20px;
+    background-color: #1F1B13;
+    /* لون غامق عشان يقفل الصفحة صح */
+    color: #F0E0C8;
+    text-align: center;
+    font-size: 0.9rem;
+}
