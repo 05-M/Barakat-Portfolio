@@ -339,3 +339,51 @@ footer {
     text-align: center;
     font-size: 0.9rem;
 }
+
+/* تجعل التنقل بين الأقسام ناعم جداً */
+html {
+    scroll-behavior: smooth;
+}
+
+/* تعديلات الموبايل (Responsive Design) */
+@media (max-width: 768px) {
+    #hero h1 {
+        font-size: 2.5rem;
+        /* نصغر الخط شوية في الموبايل */
+    }
+
+    .container {
+        flex-direction: column;
+        /* نخلي الصورة والكلام فوق بعض بدل جنب بعض */
+        text-align: center;
+        gap: 30px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        /* كارد واحد في السطر في الموبايل */
+    }
+
+    .about-image img {
+        max-width: 200px;
+        /* نصغر الصورة شوية في الموبايل */
+        margin: 0 auto;
+    }
+}
+
+.secondary-button {
+    display: inline-block;
+    text-decoration: none;
+    color: #7D5700;
+    border: 2px solid #7D5700;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    margin-left: 10px;
+    /* مسافة عن الزرار الأول */
+    transition: all 0.3s ease;
+}
+
+.secondary-button:hover {
+    background-color: #F0E0C8;
+}
