@@ -345,29 +345,89 @@ html {
     scroll-behavior: smooth;
 }
 
-/* تعديلات الموبايل (Responsive Design) */
+/* ----- التعديل السحري للموبايل (Responsive Fix) ----- */
+
 @media (max-width: 768px) {
+
+    /* 1. تصغير الخطوط الكبيرة عشان متكسرش السطر */
     #hero h1 {
-        font-size: 2.5rem;
-        /* نصغر الخط شوية في الموبايل */
+        font-size: 2.5rem !important;
+        line-height: 1.2;
     }
 
-    .container {
-        flex-direction: column;
-        /* نخلي الصورة والكلام فوق بعض بدل جنب بعض */
-        text-align: center;
-        gap: 30px;
+    #hero .tagline {
+        font-size: 1rem;
+        padding: 0 10px;
     }
 
-    .projects-grid {
-        grid-template-columns: 1fr;
-        /* كارد واحد في السطر في الموبايل */
+    /* 2. أهم حتة: إجبار كل الـ Containers إنها تبقى بالطول (Stacking) */
+    .container,
+    #about .container,
+    #skills .container,
+    #projects .container {
+        flex-direction: column !important;
+        /* العناصر تحت بعض */
+        text-align: center !important;
+        /* الكلام في النص */
+        padding: 40px 20px;
+        gap: 20px;
+    }
+
+    /* 3. تصليح قسم About Me */
+    .about-image,
+    .about-text {
+        flex: none !important;
+        width: 100% !important;
     }
 
     .about-image img {
-        max-width: 200px;
-        /* نصغر الصورة شوية في الموبايل */
+        max-width: 180px;
+        /* تصغير صورتك شوية في الموبايل */
         margin: 0 auto;
+    }
+
+    /* 4. تصليح قسم المهارات (إلغاء التقسيمة العرضية) */
+    .skills-grid {
+        grid-template-columns: 1fr !important;
+        text-align: left;
+        /* نخلي أسماء التصنيفات على الشمال أو النص حسب ذوقك */
+    }
+
+    .chips-container {
+        justify-content: center;
+        /* رص الـ Chips في نص الشاشة */
+    }
+
+    /* 5. تصليح قسم المشاريع */
+    .projects-grid {
+        grid-template-columns: 1fr !important;
+        /* كارد واحد بس في السطر */
+    }
+
+    .project-card {
+        padding: 20px;
+    }
+
+    /* 6. تصليح الأزرار في الهيرو سيكشن */
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .secondary-button {
+        margin-left: 0 !important;
+        /* شيل المسافة اللي على الشمال وخلي الزرار تحت التاني */
+    }
+
+    /* 7. تصليح قسم التواصل */
+    .social-links {
+        gap: 20px;
+    }
+
+    .social-links a {
+        font-size: 2.5rem;
     }
 }
 
