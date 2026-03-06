@@ -220,22 +220,34 @@
         const body = document.body;
         const icon = themeToggle.querySelector('i');
 
-        // تفحص إذا كان المستخدم اختار الدارك مود قبل كدة
-        if (localStorage.getItem('theme') === 'dark') {
+        // 1. تفحص هل فيه اختيار قديم متسيف؟
+        const savedTheme = localStorage.getItem('theme');
+
+        // 2. تفحص ثيم التليفون (System Preference)
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        // تحديد الثيم الابتدائي
+        if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+            applyDarkMode();
+        }
+
+        function applyDarkMode() {
             body.classList.add('dark-mode');
-            icon.classList.replace('fa-moon', 'fa-sun'); // يغير الأيقونة لشمس
+            icon.classList.replace('fa-moon', 'fa-sun');
+            localStorage.setItem('theme', 'dark');
+        }
+
+        function applyLightMode() {
+            body.classList.remove('dark-mode');
+            icon.classList.replace('fa-sun', 'fa-moon');
+            localStorage.setItem('theme', 'light');
         }
 
         themeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-
-            // حفظ الاختيار وتغيير الأيقونة
             if (body.classList.contains('dark-mode')) {
-                localStorage.setItem('theme', 'dark');
-                icon.classList.replace('fa-moon', 'fa-sun');
+                applyLightMode();
             } else {
-                localStorage.setItem('theme', 'light');
-                icon.classList.replace('fa-sun', 'fa-moon');
+                applyDarkMode();
             }
         });
     </script>

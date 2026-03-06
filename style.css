@@ -32,6 +32,13 @@
     --nav-bg: rgba(0, 0, 0, 0.9);
 }
 
+/* في الدارك مود، نخلي الـ Logo والأيقونات تنور أزرق */
+.dark-mode .logo,
+.dark-mode .nav-links a:hover {
+    color: var(--primary);
+    text-shadow: 0 0 10px rgba(0, 210, 255, 0.5);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -55,10 +62,14 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(255, 248, 241, 0.95);
+    background-color: var(--nav-bg);
+    /* هيتغير تلقائي مع الثيم */
     padding: 15px 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    /* خط سفلي رفيع باللون الأزرق في الدارك مود بيدي شكل تحفة */
+    border-bottom: 1px solid rgba(0, 210, 255, 0.1);
 }
 
 .navbar .container {
@@ -79,8 +90,10 @@ body {
 .nav-links a {
     text-decoration: none;
     color: var(--text-main);
+    /* الخط هيقلب أبيض في الدارك مود لوحده */
     font-weight: 600;
-    transition: 0.3s;
+    font-size: 0.9rem;
+    transition: color 0.3s;
 }
 
 .nav-links a:hover {
