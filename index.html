@@ -15,6 +15,9 @@
     <nav class="navbar">
         <div class="container">
             <div class="logo">MB.</div>
+            <div id="theme-toggle" class="theme-switch" title="Toggle Theme">
+                <i class="fas fa-moon"></i> <!-- أيقونة القمر للتبديل -->
+            </div>
             <ul class="nav-links">
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -212,6 +215,29 @@
         }
         window.addEventListener("scroll", reveal);
         reveal();
+
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        const icon = themeToggle.querySelector('i');
+
+        // تفحص إذا كان المستخدم اختار الدارك مود قبل كدة
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.add('dark-mode');
+            icon.classList.replace('fa-moon', 'fa-sun'); // يغير الأيقونة لشمس
+        }
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+
+            // حفظ الاختيار وتغيير الأيقونة
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+                icon.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                localStorage.setItem('theme', 'light');
+                icon.classList.replace('fa-sun', 'fa-moon');
+            }
+        });
     </script>
 
 </body>
