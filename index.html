@@ -12,45 +12,52 @@
 
 <body>
 
-    <!-- 1. Hero Section -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">MB.</div>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- الـ Hero Section الجديد -->
     <section id="hero">
-        <!-- هنحط المحتوى جوه div عشان نتحكم فيه كوحدة واحدة -->
         <div class="hero-content">
+            <!-- الصورة بقت فوق الاسم علطول -->
+            <img src="barakotta.png" alt="Muhammad Barakat" class="hero-avatar">
             <h1>Muhammad Barakat</h1>
             <p class="tagline">
                 Android Developer passionate about building clean and practical mobile applications with modern Android
                 tools.
             </p>
-            <!-- ده الزرار اللي هيودينا على قسم المشاريع لما ندوس عليه -->
-            <a href="#projects" class="cta-button">View My Projects</a>
-            <a href="#" class="secondary-button">Download CV</a>
+            <div class="hero-buttons">
+                <a href="#projects" class="cta-button">View My Projects</a>
+                <a href="Muhammad_Barakat_CV.pdf" download class="secondary-button">Download CV</a>
+            </div>
         </div>
     </section>
 
-    <!-- 2. About Me Section -->
-    <section id="about">
+    <!-- قسم About Me بقى كلام بس وشكله أشيك -->
+    <section id="about" class="reveal">
         <div class="container">
-            <!-- هنقسم المحتوى لجزئين -->
-            <div class="about-image">
-                <img src="barakotta.png" alt="Muhammad Barakat">
-            </div>
-            <div class="about-text">
+            <div class="about-card">
                 <h2>About Me</h2>
-                <p>
-                    I am an Android developer with a strong focus on learning the fundamentals of modern Android
-                    development. I work with Kotlin and Jetpack Compose, and I care deeply about writing clean code,
-                    understanding state management, and applying proper architecture patterns like MVVM.
-                </p>
-                <p>
-                    I enjoy turning ideas into real applications and continuously improving my skills by building
-                    projects, exploring best practices, and learning from real-world problems.
-                </p>
+                <p>I am an Android developer focused on modern Android development using Kotlin and Jetpack Compose. I
+                    care about clean code, proper architecture, and building practical applications that solve real
+                    problems.</p>
+                <p>I enjoy turning ideas into real applications and continuously improving my skills by building
+                    projects, exploring best practices, and learning from real-world problems.</p>
             </div>
         </div>
     </section>
 
     <!-- 3. Skills Section -->
-    <section id="skills">
+    <section id="skills" class="reveal">
         <div class="container">
             <h2>My Skills</h2>
             <!-- هنعمل حاوية لكل تصنيف -->
@@ -110,7 +117,7 @@
     </section>
 
     <!-- 4. Projects Section -->
-    <section id="projects">
+    <section id="projects" class="reveal">
         <div class="container">
             <h2>My Projects</h2>
             <div class="projects-grid">
@@ -152,33 +159,60 @@
     </section>
 
     <!-- 5. Contact Section -->
-    <section id="contact">
+    <section id="contact" class="reveal">
         <div class="container">
-            <h2>Contact Me</h2>
-            <p class="contact-subtext">Feel free to reach out to me through the following platforms:</p>
+            <!-- غلفنا المحتوى بكارد عشان التناسق -->
+            <div class="about-card" style="text-align: center;">
+                <h2>Contact Me</h2>
+                <p class="contact-subtext">Feel free to reach out to me through the following platforms:</p>
 
-            <div class="social-links">
-                <!-- Email -->
-                <a href="mailto:hjajbrkat@gmail.com" title="Email Me">
-                    <i class="fas fa-envelope"></i>
-                </a>
-                <!-- GitHub -->
-                <a href="https://github.com/05-M" target="_blank" title="GitHub Profile">
-                    <i class="fab fa-github"></i>
-                </a>
-                <!-- LinkedIn -->
-                <a href="https://www.linkedin.com/in/muhammad-barakat-b1b1ab2bb/" target="_blank"
-                    title="LinkedIn Profile">
-                    <i class="fab fa-linkedin"></i>
-                </a>
+                <div class="social-links">
+                    <!-- Email -->
+                    <a href="mailto:hjajbrkat@gmail.com" title="Email Me">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <!-- GitHub -->
+                    <a href="https://github.com/05-M" target="_blank" title="GitHub Profile">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/muhammad-barakat-b1b1ab2bb/" target="_blank"
+                        title="LinkedIn Profile">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- الـ Footer (تذييل الصفحة) -->
-    <footer>
-        <p>&copy; 2026 Muhammad Barakat. Built with ❤️ and Kotlin Spirit.</p>
-    </footer>
+    <script>
+        // كود الزووم للصورة
+        const avatar = document.querySelector('.hero-avatar');
+        avatar.addEventListener('click', function (e) {
+            e.stopPropagation(); // يمنع تداخل الأحداث
+            this.classList.toggle('zoomed');
+        });
+
+        // لو ضغط في أي حتة تانية في الشاشة، الصورة تصغر تاني
+        document.addEventListener('click', function () {
+            avatar.classList.remove('zoomed');
+        });
+
+        // كود الـ Reveal
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal();
+    </script>
 
 </body>
 
